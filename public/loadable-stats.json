@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.42.0",
-  "hash": "4d2f0957742353af2785",
+  "hash": "ea4297a9bb5258eb2859",
   "publicPath": "",
   "outputPath": "C:\\Users\\dell\\Desktop\\sapient-ssr\\public",
   "assetsByChunkName": {
@@ -11,7 +11,7 @@
   "assets": [
     {
       "name": "main.js",
-      "size": 1216506,
+      "size": 1217233,
       "chunks": [
         "main"
       ],

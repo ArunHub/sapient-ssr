@@ -37,19 +37,25 @@
   }
 }
 
-#root{
-    display: grid;
-    grid-template-areas: "header header" "aside main" "aside footer";
-    grid-template-rows: 50px 1fr 30px;
-    grid-template-columns: 350px 1fr;
+body{
+  background-color: #f2f2f2;
 }
 
-header{
-      grid-area: header;
+.container{
+    display: grid;
+    grid-template-areas: "aside main" "aside footer";
+    grid-template-rows: 1fr 30px;
+    
+    grid-template-columns: 250px 1fr;
+    grid-gap: 20px;
+
 }
 
 aside{
       grid-area: aside;
+      background-color: white;
+          margin-left: 20px;
+    padding: 20px;
 }
 
 main{
@@ -67,13 +73,81 @@ footer{
 }
 
 .program{
-  margin:20px
+  margin:0 10px 20px;
+  padding: 20px;
+  background-color: white;
+
+}
+
+.program h3{
+  color: #414d97;
+}
+
+.program ul{
+  color: #414d97;
+}
+
+.program div span{
+  font-weight: bold;
+}
+
+.program img{
+      width: 200px;
+    max-width: 100%;
 }
 
 .active{
-  border:3px dashed yellowgreen;
+  background-color:  #7cba01;
 }
 
+
+
 .inactive{
-  border: initial;
+  background-color: #c5e09b;
+}
+
+aside div{
+      text-align: center;
+    border-bottom: 1px solid;
+}
+
+aside ul{
+      list-style: none;
+          padding-left: 0px;
+}
+
+aside ul li{
+  display: inline-block;
+  margin: 5px;
+}
+
+aside ul li button {
+  padding: 6px;
+  border: 0;
+      font-size: 16px;
+      background-color: #c5e09b;
+}
+
+aside, .program, aside ul li button{
+  border-radius: 5px;
+}
+
+@media (max-width: 700px){
+  .container{
+    grid-template-areas: "aside" "main" "footer";
+    grid-template-rows: 1fr;
+    
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1024px){
+  .container{
+    grid-template-areas: "aside main" "aside footer";
+    grid-template-rows: 1fr 30px;
+    
+    grid-template-columns: 200px 1fr;
+    grid-gap: 20px;
+  }
 }

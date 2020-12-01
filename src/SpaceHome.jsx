@@ -29,16 +29,17 @@ class SpaceHome extends React.Component {
         const { programList } = this.state;
         return (
             <>
-                <header>
-                    <h1>SpaceX Launch Programs</h1>
-                </header>
-                <aside>
-                    <Filters handleLaunchYear={this.handleLaunchYear} />
-                </aside>
-                <main>
-                    <ProgramContainer programList={programList} />
-                </main>
-                <footer>Developed by {this.props.developer}</footer>
+
+                <h1>SpaceX Launch Programs</h1>
+                <div className="container">
+                    <aside>
+                        <Filters handleLaunchYear={this.handleLaunchYear} />
+                    </aside>
+                    <main>
+                        <ProgramContainer programList={programList} />
+                    </main>
+                    <footer>Developed by {this.props.developer}</footer>
+                </div>
             </>
         );
     }

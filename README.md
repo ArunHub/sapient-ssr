@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+## React server side rendering
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### learnings:
+- ssr is for faster first page load and SEO. Because in normal react app , when you visit view source of the page. it will not show the rendered page since it is  in javascript so only throguth process of rendering from server , google can fetch details from the page and do SEO
 
-## Available Scripts
+- customized https://github.com/Rohitkrops/ssr for react server side rendering template
 
-In the project directory, you can run:
+- import Program from "./Program.jsx"; // jsx is not accepted
 
-### `npm start`
+- import class properties babel plugin and put it in babelrc.json / package.json / webpack config
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- babel register used to transform import into require in nodejs . see index.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- seperated logic from component and put into to service and constants in constants
 
-### `npm test`
+- tried eslint config in webpack and ran in npm scripts as well
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- "dev": "npm run dev:build-server && npm run lint && nodemon ./index.js" for running eslint errors
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - when runnning lighthouse performance . it shows poor performance so when seeing the google recommendations i can able to code split using 3rd party lib- loadable server and dynamically imported script tags also. 
+- also learnt reacttonodestream which also used to increase the performance .
+- overall i was able to improve from 9 to 85 in desktop and 73 in mobile.
+-learnt why app.use is useful. it is like express telling us to use the assets and make use of this folder to run the application when i was facing 404 error for main.js script file.
+- entry of webpack and how it builds during npm scripts and after build ,it runs the code in server to serve.
+- trying to connect with devops operation. using travis ci/cd and will use github pages or heroku

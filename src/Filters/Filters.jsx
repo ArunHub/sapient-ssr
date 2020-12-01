@@ -5,7 +5,7 @@ import { LAUNCH_YEAR, SUCCESSFUL_LANDING, SUCCESSFUL_LAUNCH } from "./../constan
 
 function Filters(props) {
     const [filters, setFilters] = useState({
-        launch_year: [2014, 2015, 2016],
+        launch_year: [2006,2007,2008,2009,2010,2011,2012,2013,2014, 2015, 2016,2017,2018,2019,2020],
         successful_launch: { "yes": { active: false }, "no": { active: false } },
         successful_landing: { "yes": { active: false }, "no": { active: false } },
         activeFilter: {}
@@ -43,15 +43,15 @@ function Filters(props) {
     return (
         <>
             <h3>Filters</h3>
-            <label>Launch year</label>
+            <div>Launch Year</div>
             <ul onClick={(e) => handleLaunchYear(LAUNCH_YEAR, e)} >
                 {launchYearList}
             </ul>
-            <label>Succesfull Launch</label>
+            <div>Successful Launch</div>
             <ul onClick={(e) => handleLaunchYear(SUCCESSFUL_LAUNCH, e)}>
                 {launchSuccessList}
             </ul>
-            <label>Succesfull Landing</label>
+            <div>Successful Landing</div>
             <ul onClick={(e) => handleLaunchYear(SUCCESSFUL_LANDING, e)}>
                 {landSuccessList}
             </ul>

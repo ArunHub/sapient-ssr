@@ -7,11 +7,11 @@ export default function Program(props) {
         <>
             <div className="program">
                 <img src={mission_patch_small} alt={mission_name} loading="lazy" />
-                <h4>{mission_name}</h4>
-                <div>mission id: <ul>{mission_id.map((t, i) => <li key={i}>t</li>)}</ul></div>
-                <div>launch year: {launch_year}</div>
-                <div>succesful launch: {launch_success ? "true" : "false"}</div>
-                <div>succesful landing: {cores[0].land_success ? "true" : "false"}</div>
+                <h3>{mission_name}</h3>
+                <div><span>Mission ids:</span> <ul>{mission_id.map((t, i) => <li key={i}>t</li>)}</ul></div>
+                <div><span>Launch Year:</span> {launch_year}</div>
+                <div><span>Succesful Launch:</span> {launch_success ? "true" : "false"}</div>
+                <div><span>Succesful Landing:</span> {cores[0].land_success ? "true" : "false"}</div>
             </div>
         </>
     )
