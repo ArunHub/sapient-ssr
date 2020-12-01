@@ -1,5 +1,8 @@
 ## React server side rendering
 
+To run the applicaton ,
+-> npm run dev
+
 ##### learnings:
 - ssr is for faster first page load and SEO. Because in normal react app , when you visit view source of the page. it will not show the rendered page since it is  in javascript so only throguth process of rendering from server , google can fetch details from the page and do SEO
 
